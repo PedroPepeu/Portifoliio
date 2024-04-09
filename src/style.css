@@ -1,0 +1,63 @@
+body {
+    background-color: white;
+}
+
+nav {
+    position: fixed;
+    /* border: 3px solid green; */
+    border-radius: 10px;
+    right: 25%;
+    width: 1000px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.nav-left {
+    color: #000009;
+    position: relative;
+    left: 30px;
+    top: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.nav-right {
+    color: #000009;
+    position: relative;
+    left: 800px;
+    bottom: 7px;
+}
+
+.mail-icon {
+    width: 25px;
+    padding-left: 30px;
+}
+
+.devicon-linkedin-plain, .devicon-github-original {
+    font-size: 25px;
+    padding-left: 30px;
+}
+
+.welcome-text {
+    position: absolute;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
+    font-size: xx-large;
+    left: 25%;
+    top: 300px;
+}
+
+.down {
+    position: absolute;
+    bottom: 20px;
+    left: 49%;
+}
+
+.down-text {
+    position: relative;
+    left: -40px;
+}
+
+.ri-arrow-down-wide-line {
+    font-size: 40px;
+}
