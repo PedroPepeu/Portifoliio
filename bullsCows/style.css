@@ -1,0 +1,14 @@
+body {
+    background-color: rgb(0, 19, 37);
+}
+
+.input-board {
+    position: absolute;
+    border: 3px solid greenyellow;
+    width: 100px;
+}
+
+.answer-board {
+    position: absolute;
+    border: 3px solid red;
+}
