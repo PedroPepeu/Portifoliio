@@ -1,32 +1,46 @@
-let tries = 0;
+let line = 1;
 
-const blockS = "85px";
+let ans = [1, 3, 2, 4];
 
-function createTable() {
-    tries+=1;
-    
-    const line = document.createElement("div");
+document.getElementById('submit').addEventListener("click", function() {
+    let inp = [0,0,0,0];
+    inp[0] = document.getElementById(`$val{line}1`).value;
+    inp[1] = document.getElementById(`$val{line}2`).value;
+    inp[2] = document.getElementById(`$val{line}3`).value;
+    inp[3] = document.getElementById(`$val{line}4`).value;
+
+    let r = 0, w = 0;
     for(let i = 0; i < 4; i++) {
-        const block = document.createElement("input");
-        block.type = "number";
-        block.style.width = blockS;
-        block.style.height = blockS;
-        block.style.border = "8px solid rgb(31, 27, 54)";
-        block.style.backgroundColor = "rgb(46, 41, 84)";
-        block.style.borderRadius = "5px";
-        block.style.marginRight = "6px";
-        block.style.fontSizeAdjust = 3;
-        block.style.textAlign = "center";
-        line.appendChild(block);
+        let change = 0;
+        for(let j = 0; j < 4; j++) {
+            if(inp[i] == ans[j]) {
+                r+=1;
+                change = 1;
+            }
+        }
+        if(change == 0) {
+            w+=1;
+        }
     }
-    const submit = document.createElement("button");
-    const text = document.createTextNode("submit");
-    document.getElementById('input-board').appendChild(line);
-}
 
-document.getElementById('start').addEventListener("click", function() {
-    document.getElementById('page').style.animation = "disappear 2s";
-    document.getElementById('page').style.animationFillMode = "forwards";
-
-    createTable();
+    line++;
+    console.log("acertos:", r, " erros:", w);
+    changeActivation();
 });
+
+function changeActivation() {
+    for(let i = 1; i <= 8; i++) {
+        if(i == line) {
+            document.getElementById(`$val{line}1`).disable = false;
+            document.getElementById(`$val{line}2`).disable = false;
+            document.getElementById(`$val{line}3`).disable = false;
+            document.getElementById(`$val{line}4`).disable = false;
+            continue;
+        }
+        
+        document.getElementById(`$val{line}1`).disable = true;
+        document.getElementById(`$val{line}2`).disable = true;
+        document.getElementById(`$val{line}3`).disable = true;
+        document.getElementById(`$val{line}4`).disable = true;
+    }
+};
